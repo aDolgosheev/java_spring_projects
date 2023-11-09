@@ -9,22 +9,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+//@Component
 public class ClassicalMusic implements Music {
 
-    @PostConstruct
-    public void doMyInit() {
-        System.out.println("Doing my initialization");
-    }
+//    @PostConstruct
+//    public void doMyInit() {
+//        System.out.println("Doing my initialization");
+//    }
+//
+//    @PreDestroy
+//    public void doMyDestroy() {
+//        System.out.println("Doing my destruction");
+//    }
 
-    @PreDestroy
-    public void doMyDestroy() {
-        System.out.println("Doing my destruction");
-    }
-
-    private final List<String> classicalMusicPlaylist = Arrays.asList("Hungarian Rhapsody", "6th Symphony", "Seasons");
+    private final List<String> musicPlaylist = Arrays.asList("Hungarian Rhapsody", "6th Symphony", "Seasons");
     @Override
     public String getSong(int i) {
-        return classicalMusicPlaylist.get(i);
+        return musicPlaylist.get(i);
     }
 }
