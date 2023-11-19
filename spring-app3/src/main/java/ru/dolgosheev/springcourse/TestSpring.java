@@ -16,8 +16,6 @@ public class TestSpring {
 //        ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
 
-
-
         context.close();
     }
 }
