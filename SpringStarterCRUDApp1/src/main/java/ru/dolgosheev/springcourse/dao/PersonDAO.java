@@ -1,6 +1,9 @@
 package ru.dolgosheev.springcourse.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import ru.dolgosheev.springcourse.models.Person;
 
 import java.util.ArrayList;
@@ -15,7 +18,7 @@ public class PersonDAO {
         people = new ArrayList<>();
 
         people.add(new Person(++PEOPLE_COUNT, "Tom"));
-        people.add(new Person(++PEOPLE_COUNT, "Bod"));
+        people.add(new Person(++PEOPLE_COUNT, "Bob"));
         people.add(new Person(++PEOPLE_COUNT, "Mike"));
         people.add(new Person(++PEOPLE_COUNT, "Katy"));
     }
@@ -26,5 +29,20 @@ public class PersonDAO {
 
     public Person show(int id) {
         return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
+    }
+
+    public void save(Person person) {
+        person.setId(++PEOPLE_COUNT);
+        people.add(person);
+    }
+
+    public void update(int id, Person updatePerson) {
+        Person personToBeUpdated = show(id);
+
+        personToBeUpdated.setName(updatePerson.getName());
+    }
+
+    public void delete(int id) {
+        people.removeIf(p -> p.getId() == id);
     }
 }
