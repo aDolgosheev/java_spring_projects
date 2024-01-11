@@ -7,7 +7,6 @@ public class Person {
 
     @NotEmpty(message = "Name should not be empty")
     @Size(min = 2, max = 30, message = "Name should have correct length")
-    @Pattern(regexp = "^[A-Za-z]*$", message = "Name should be valid")
     private String name;
 
     @Min(value = 0, message = "Age should be greater than 0")
