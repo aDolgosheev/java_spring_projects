@@ -11,7 +11,7 @@ import ru.dolgosheev.springcourse.models.Person;
 import ru.dolgosheev.springcourse.util.PersonValidator;
 
 @Controller
-@RequestMapping("/people")
+@RequestMapping("/people" )
 public class PeopleController {
 
     private final PersonDAO personDAO;
