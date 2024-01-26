@@ -8,7 +8,6 @@ import ru.dolgosheev.model.Person;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -64,12 +63,22 @@ public class App {
 //            //Не порождает SQL, но необходимо для того, чтобы в кэше все было верно
 //            person.getItems().forEach(i -> i.setOwner(null));
 
-            // Изменение владельца товара
-            Person person = session.get(Person.class, 4);
-            Item item = session.get(Item.class, 1);
-            item.getOwner().getItems().remove(item);
-            item.setOwner(person);
-            person.getItems().add(item);
+//            // Изменение владельца товара
+//            Person person = session.get(Person.class, 4);
+//            Item item = session.get(Item.class, 1);
+//            item.getOwner().getItems().remove(item);
+//            item.setOwner(person);
+//            person.getItems().add(item);
+
+            Person person = new Person("Kira", 43);
+            person.addItem(new Item("Laptop"));
+            person.addItem(new Item("Table"));
+            person.addItem(new Item("Chair"));
+
+
+//            person.setItems(new ArrayList<>(Collections.singletonList(item)));
+
+            session.persist(person);
 
             session.getTransaction().commit();
         } finally {

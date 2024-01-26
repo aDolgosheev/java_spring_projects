@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hibernate_demo_db@localhost" uuid="efba2b52-14f3-4b26-983a-3427d8c43077">
+    <data-source source="LOCAL" name="hibernate_demo_db_02@localhost" uuid="3ad63260-47d9-4662-906c-ecfb2cedb464">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/hibernate_demo_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/hibernate_demo_db_02</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
