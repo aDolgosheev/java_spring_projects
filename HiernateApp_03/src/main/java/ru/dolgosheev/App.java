@@ -9,6 +9,7 @@ import ru.dolgosheev.model.Passport;
 import ru.dolgosheev.model.Person;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class App
@@ -40,11 +41,22 @@ public class App
 
 //            session.persist(person);
 
-            Movie movie = new Movie("Pulp function", 1994);
-            Actor actor1 = new Actor("Harvey Keitel", 81);
-            Actor actor2 = new Actor("Samuel L. Jackson", 72);
+//            Movie movie = new Movie("Reservoir Dogs", 1992);
+//            Actor actor = session.get(Actor.class, 1);
+//
+//            movie.setActors(new ArrayList<>(Collections.singletonList(actor)));
+//
+//            actor.getMovies().add(movie);
+//
+//            session.persist(movie);
+//            session.persist(actor);
 
-            movie.setActors(new ArrayList<>(List.of(actor1, actor2)));
+            Actor actor = session.get(Actor.class, 2);
+            System.out.println(actor);
+
+            Movie movieToRemove = actor.getMovies().get(0);
+            actor.getMovies().remove(0);
+            movieToRemove.getActors().remove(actor);
 
             session.getTransaction().commit();
         }

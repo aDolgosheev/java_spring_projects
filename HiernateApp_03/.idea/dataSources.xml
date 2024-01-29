@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hibernate_demo_db_02@localhost" uuid="3ad63260-47d9-4662-906c-ecfb2cedb464">
+    <data-source source="LOCAL" name="hibernate_demo_db_02@localhost" uuid="9b2d886b-e0fb-458a-9a8c-6ba37d838bd9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
