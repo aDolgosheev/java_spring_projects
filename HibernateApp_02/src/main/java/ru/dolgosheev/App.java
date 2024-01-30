@@ -16,9 +16,10 @@ public class App {
                 .addAnnotatedClass(Item.class);
 
         SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.getCurrentSession();
+
 
         try {
+            Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
 //            // Получение информации о человеке
@@ -70,15 +71,16 @@ public class App {
 //            item.setOwner(person);
 //            person.getItems().add(item);
 
-            Person person = new Person("Kira", 43);
-            person.addItem(new Item("Laptop"));
-            person.addItem(new Item("Table"));
-            person.addItem(new Item("Chair"));
+            Person person = session.get(Person.class, 1);
+            System.out.println("Take person");
+
+            System.out.println(person.getItems());
 
 
-//            person.setItems(new ArrayList<>(Collections.singletonList(item)));
-
-            session.persist(person);
+//            Item item = session.get(Item.class, 1);
+//            System.out.println("Получили товар");
+//
+//            System.out.println(item.getOwner());
 
             session.getTransaction().commit();
         } finally {
