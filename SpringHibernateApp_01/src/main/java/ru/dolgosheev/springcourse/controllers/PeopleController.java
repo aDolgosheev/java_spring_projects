@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.dolgosheev.springcourse.dao.PersonDAO;
 import ru.dolgosheev.springcourse.models.Person;
 import ru.dolgosheev.springcourse.services.ItemService;
 import ru.dolgosheev.springcourse.services.PeopleService;
@@ -17,16 +18,21 @@ public class PeopleController {
 
     private final PeopleService peopleService;
 
+    private final PersonDAO personDAO;
+
     private final ItemService itemService;
 
     @Autowired
-    public PeopleController(PeopleService peopleService, ItemService itemService) {
+    public PeopleController(PeopleService peopleService, PersonDAO personDAO, ItemService itemService) {
         this.peopleService = peopleService;
+        this.personDAO = personDAO;
         this.itemService = itemService;
     }
 
     @GetMapping()
     public String index(Model model) {
+        personDAO.testNPlus1();
+
         model.addAttribute("people", peopleService.findAll());
 
         itemService.findByItemName("Airpods");
